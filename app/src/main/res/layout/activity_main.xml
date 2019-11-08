@@ -6,39 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="151dp"
-        android:layout_marginRight="151dp"
-        android:layout_marginBottom="314dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!--    <Button-->
+    <!--        android:id="@+id/button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="151dp"-->
+    <!--        android:layout_marginRight="151dp"-->
+    <!--        android:layout_marginBottom="314dp"-->
+    <!--        android:text="Button"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent" />-->
 
-    <TextView
-        android:id="@+id/textView_result"
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView_result"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="18dp"-->
+    <!--        android:layout_marginLeft="18dp"-->
+    <!--        android:layout_marginTop="63dp"-->
+    <!--        android:text="Result"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/button"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/button" />-->
+
+
+    <Spinner
+        android:id="@+id/spinner_httpMethods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="63dp"
-        android:text="Result"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:layout_marginTop="@dimen/textview_url_top_margin"
+        app:layout_constraintBaseline_toBaselineOf="@id/edittext_url"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/edittext_url"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/edittext_url"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:ems="10"
+        android:layout_marginTop="@dimen/textview_url_top_margin"
+        android:hint="URL"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="URL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/spinner_httpMethods"
+        app:layout_constraintRight_toLeftOf="@id/button_go"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textview_url_top_margin"
+        android:text="Go"
+        app:layout_constraintLeft_toRightOf="@id/edittext_url"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+
+        android:id="@+id/linearlayout_input_body"
+        android:background="#FEFEFE"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        app:layout_constraintTop_toBottomOf="@id/edittext_url"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:id="@+id/edittext_input_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginTop="100px"
+        android:background="#FEFEFE"
+        android:id="@+id/linearlayout_output_body"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        app:layout_constraintTop_toBottomOf="@id/linearlayout_input_body"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+            android:id="@+id/edittext_output_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
